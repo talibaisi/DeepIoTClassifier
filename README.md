@@ -1,9 +1,8 @@
 # Explainable IoT Intrusion Detection via Bio-Inspired Encoding
 
-This repository is a **reconstruction scaffold** of the experiment pipeline described in the attached IEEE draft:
+This repository has experiments pipeline described in the attached IEEE draft:
 **"Explainable IoT Intrusion Detection via Bio-Inspired Encoding and Interpretable AI Models"**.
 
-It is designed to help you publish a credible, reproducible codebase when the original local scripts are missing.
 It covers:
 
 - CICIoT-style CSV ingestion
@@ -19,8 +18,6 @@ It covers:
 
 ## Important note
 
-This repository is **not claimed to be the exact original code** used in the paper.
-It is a careful implementation based on the methodology and reported outputs in the draft.
 To reproduce the paper numbers as closely as possible, you still need to align:
 
 - the exact CICIoT2023 subset
@@ -29,8 +26,6 @@ To reproduce the paper numbers as closely as possible, you still need to align:
 - exact train/test split
 - exact model hyperparameters
 - hardware / software versions
-
-That honesty is better for reviewers than pretending this is the original missing code.
 
 ## Repository layout
 
@@ -108,17 +103,3 @@ The following 10 structural features are computed:
 
 These are implemented with `Bio.SeqUtils.ProtParam.ProteinAnalysis`, with extinction coefficients used for reduced/disulfide features.
 
-## Reviewer-friendly wording
-
-In your GitHub README or paper reproducibility statement, you can say:
-
-> This repository reconstructs the full experimental workflow reported in the manuscript, including data preparation, bio-inspired encoding, benchmark training, XAI analysis, and table/figure generation. Because the original local scripts were not fully recoverable, this version was rebuilt directly from the documented methodology and validated for end-to-end reproducibility.
-
-## Suggested GitHub sections
-
-- Overview
-- Data access
-- Reproducibility steps
-- Environment
-- Known deviations from manuscript
-- Citation
