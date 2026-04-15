@@ -1,0 +1,67 @@
+experiment_name: iot_xai_repro
+random_state: 42
+device: auto
+
+data:
+  raw_path: ./data/CICIoT2023
+  label_column: label
+  id_columns: []
+  n_samples: 50000
+  test_size: 0.20
+  feature_columns: null        # null => infer numeric columns
+  encoded_dataset_path: ./outputs/encoded_dataset.csv
+
+preprocessing:
+  scale_encoded_features: true
+  scale_raw_features_for_chi2: true
+
+feature_selection:
+  enabled: false
+  chi2_top_k: 40
+  cnn_top_k: 20
+  epochs: 10
+  batch_size: 256
+
+classical_models:
+  enabled:
+    - KNN
+    - NB
+    - DT
+    - LR
+    - SVM
+    - RF
+    - GB
+    - XGB
+    - CatBoost
+    - Bagging
+    - StackingLR
+    - StackingDT
+
+deep_models:
+  enabled:
+    - CNN
+    - RNN
+    - LSTM
+    - GRU
+    - Transformer
+    - GNN
+  hidden_dim: 32
+  num_layers: 3
+  dropout: 0.2
+  batch_size: 256
+  epochs: 20
+  learning_rate: 0.001
+  weight_decay: 0.00001
+
+cross_validation:
+  folds: 20
+
+xai:
+  baseline_sample_index: 0
+  shap_background_size: 200
+  shap_eval_size: 300
+  lime_num_features: 10
+  anchor_threshold: 0.95
+
+outputs:
+  root: ./outputs
