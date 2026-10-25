@@ -1,0 +1,465 @@
+{
+ "shap_mean_abs": {
+  "MolecularWeight": 0.0903,
+  "Aromaticity": 0.0266,
+  "InstabilityIndex": 0.0313,
+  "IsoelectricPoint": 0.1047,
+  "AlphaHelix": 0.0576,
+  "ReducedCysteines": 0.0293,
+  "DisulfideBridges": 0.0361,
+  "Gravy": 0.026,
+  "BetaTurn": 0.2366,
+  "BetaStrand": 0.0041
+ },
+ "shap_instance": {
+  "MolecularWeight": 0.0518,
+  "Aromaticity": 0.0165,
+  "InstabilityIndex": 0.0237,
+  "IsoelectricPoint": 0.0996,
+  "AlphaHelix": 0.0652,
+  "ReducedCysteines": -0.01,
+  "DisulfideBridges": 0.0067,
+  "Gravy": -0.0146,
+  "BetaTurn": 0.2537,
+  "BetaStrand": 0.0021
+ },
+ "lime": [
+  [
+   "DisulfideBridges <= -0.13",
+   0.27014
+  ],
+  [
+   "Gravy <= -0.33",
+   0.16046
+  ],
+  [
+   "BetaTurn <= -0.93",
+   0.15182
+  ],
+  [
+   "0.35 < IsoelectricPoint <= 0.42",
+   0.11946
+  ],
+  [
+   "-0.35 < MolecularWeight <= -0.13",
+   -0.09692
+  ],
+  [
+   "ReducedCysteines <= -0.13",
+   -0.07068
+  ],
+  [
+   "Aromaticity <= -0.41",
+   0.05959
+  ],
+  [
+   "-0.73 < AlphaHelix <= 0.29",
+   0.05824
+  ],
+  [
+   "-0.42 < InstabilityIndex <= -0.15",
+   -0.00988
+  ],
+  [
+   "-0.88 < BetaStrand <= 0.37",
+   0.00793
+  ]
+ ],
+ "ig_mean_abs": {
+  "MolecularWeight": 0.0675,
+  "Aromaticity": 0.0702,
+  "InstabilityIndex": 0.0218,
+  "IsoelectricPoint": 0.0662,
+  "AlphaHelix": 0.0466,
+  "ReducedCysteines": 0.0238,
+  "DisulfideBridges": 0.0326,
+  "Gravy": 0.0339,
+  "BetaTurn": 0.2288,
+  "BetaStrand": 0.0029
+ },
+ "ig_instance": {
+  "MolecularWeight": 0.0897,
+  "Aromaticity": 0.157,
+  "InstabilityIndex": 0.0051,
+  "IsoelectricPoint": 0.1028,
+  "AlphaHelix": 0.0812,
+  "ReducedCysteines": -0.0334,
+  "DisulfideBridges": 0.0023,
+  "Gravy": 0.0466,
+  "BetaTurn": 0.5337,
+  "BetaStrand": -0.0022
+ },
+ "representative_flows": {
+  "DDoS-UDP_Flood (detected)": {
+   "prob_attack": 1.0,
+   "raw_selected": {
+    "Number": 100.0,
+    "Tot sum": 6000.0,
+    "AVG": 60.0
+   },
+   "top_ig": [
+    [
+     "BetaTurn",
+     0.5337,
+     0.0
+    ],
+    [
+     "Aromaticity",
+     0.157,
+     0.0769
+    ],
+    [
+     "IsoelectricPoint",
+     0.1028,
+     7.0986
+    ]
+   ]
+  },
+  "Mirai-greeth_flood (detected)": {
+   "prob_attack": 1.0,
+   "raw_selected": {
+    "Number": 100.0,
+    "Tot sum": 58668.0,
+    "AVG": 586.68
+   },
+   "top_ig": [
+    [
+     "MolecularWeight",
+     0.6032,
+     1446.7363
+    ],
+    [
+     "IsoelectricPoint",
+     0.4026,
+     10.0028
+    ],
+    [
+     "DisulfideBridges",
+     0.2418,
+     0.0
+    ]
+   ]
+  },
+  "Recon-PortScan (missed)": {
+   "prob_attack": 0.4979,
+   "raw_selected": {
+    "Number": 10.0,
+    "Tot sum": 600.0,
+    "AVG": 60.0
+   },
+   "top_ig": [
+    [
+     "ReducedCysteines",
+     0.2077,
+     16500.0
+    ],
+    [
+     "MolecularWeight",
+     0.1478,
+     2049.2033
+    ],
+    [
+     "DisulfideBridges",
+     0.0732,
+     16500.0
+    ]
+   ]
+  },
+  "BenignTraffic (correct)": {
+   "prob_attack": 0.0276,
+   "raw_selected": {
+    "Number": 10.0,
+    "Tot sum": 838.0,
+    "AVG": 83.8
+   },
+   "top_ig": [
+    [
+     "MolecularWeight",
+     0.0056,
+     1960.0689
+    ],
+    [
+     "IsoelectricPoint",
+     0.0028,
+     5.7634
+    ],
+    [
+     "BetaTurn",
+     0.0013,
+     0.1333
+    ]
+   ]
+  }
+ },
+ "anchors": [
+  {
+   "label": "DDoS-ICMP_Flood",
+   "anchor": [
+    "BetaTurn <= -0.93",
+    "IsoelectricPoint > 0.35"
+   ],
+   "precision": 0.9950738916256158,
+   "coverage": 0.3905
+  },
+  {
+   "label": "DDoS-UDP_Flood",
+   "anchor": [
+    "BetaTurn <= -0.93",
+    "IsoelectricPoint > 0.35"
+   ],
+   "precision": 0.995085995085995,
+   "coverage": 0.3943
+  },
+  {
+   "label": "DDoS-RSTFINFLOOD",
+   "anchor": [
+    "BetaTurn <= -0.93",
+    "IsoelectricPoint > 0.35"
+   ],
+   "precision": 0.996039603960396,
+   "coverage": 0.4001
+  },
+  {
+   "label": "DoS-UDP_Flood",
+   "anchor": [
+    "BetaTurn <= -0.93",
+    "IsoelectricPoint > 0.35"
+   ],
+   "precision": 0.9962790697674418,
+   "coverage": 0.3891
+  },
+  {
+   "label": "DoS-UDP_Flood",
+   "anchor": [
+    "BetaTurn <= -0.93",
+    "MolecularWeight <= -0.13"
+   ],
+   "precision": 0.9767649687220733,
+   "coverage": 0.4293
+  },
+  {
+   "label": "DDoS-PSHACK_FLOOD",
+   "anchor": [
+    "BetaTurn <= -0.93",
+    "IsoelectricPoint > 0.35"
+   ],
+   "precision": 0.9986945169712794,
+   "coverage": 0.3992
+  },
+  {
+   "label": "DDoS-ICMP_Flood",
+   "anchor": [
+    "BetaTurn <= -0.93",
+    "IsoelectricPoint > 0.35"
+   ],
+   "precision": 0.997020854021847,
+   "coverage": 0.3827
+  },
+  {
+   "label": "DDoS-TCP_Flood",
+   "anchor": [
+    "BetaTurn <= -0.93",
+    "IsoelectricPoint > 0.35"
+   ],
+   "precision": 0.9953810623556582,
+   "coverage": 0.3988
+  },
+  {
+   "label": "DDoS-ICMP_Flood",
+   "anchor": [
+    "BetaTurn <= -0.93",
+    "IsoelectricPoint > 0.35"
+   ],
+   "precision": 0.9930209371884346,
+   "coverage": 0.3953
+  },
+  {
+   "label": "DDoS-ICMP_Flood",
+   "anchor": [
+    "BetaTurn <= -0.93",
+    "IsoelectricPoint > 0.35"
+   ],
+   "precision": 0.9963680387409201,
+   "coverage": 0.3981
+  },
+  {
+   "label": "DDoS-RSTFINFLOOD",
+   "anchor": [
+    "BetaTurn <= -0.93",
+    "IsoelectricPoint > 0.35"
+   ],
+   "precision": 0.9957219251336898,
+   "coverage": 0.3973
+  },
+  {
+   "label": "VulnerabilityScan",
+   "anchor": [
+    "BetaTurn > -0.93",
+    "MolecularWeight > 0.45"
+   ],
+   "precision": 1.0,
+   "coverage": 0.2507
+  },
+  {
+   "label": "DDoS-TCP_Flood",
+   "anchor": [
+    "BetaTurn <= -0.93",
+    "IsoelectricPoint > 0.35"
+   ],
+   "precision": 0.9988137603795967,
+   "coverage": 0.4018
+  },
+  {
+   "label": "DDoS-PSHACK_FLOOD",
+   "anchor": [
+    "BetaTurn <= -0.93",
+    "IsoelectricPoint > 0.35"
+   ],
+   "precision": 0.996996996996997,
+   "coverage": 0.3951
+  },
+  {
+   "label": "DDoS-SynonymousIP_Flood",
+   "anchor": [
+    "BetaTurn <= -0.93",
+    "IsoelectricPoint > 0.35"
+   ],
+   "precision": 0.9981220657276996,
+   "coverage": 0.3959
+  },
+  {
+   "label": "BenignTraffic",
+   "anchor": [
+    "BetaTurn > 0.01",
+    "MolecularWeight > -0.13"
+   ],
+   "precision": 1.0,
+   "coverage": 0.2095
+  },
+  {
+   "label": "BenignTraffic",
+   "anchor": [
+    "BetaTurn > 0.01"
+   ],
+   "precision": 0.9665271966527197,
+   "coverage": 0.4423
+  },
+  {
+   "label": "BenignTraffic",
+   "anchor": [
+    "BetaTurn > 0.01",
+    "IsoelectricPoint <= -0.55"
+   ],
+   "precision": 1.0,
+   "coverage": 0.2645
+  },
+  {
+   "label": "BenignTraffic",
+   "anchor": [
+    "BetaTurn > 0.82",
+    "IsoelectricPoint <= -0.55"
+   ],
+   "precision": 1.0,
+   "coverage": 0.143
+  },
+  {
+   "label": "BenignTraffic",
+   "anchor": [
+    "BetaTurn > -0.93",
+    "MolecularWeight > -0.13"
+   ],
+   "precision": 1.0,
+   "coverage": 0.3445
+  },
+  {
+   "label": "BenignTraffic",
+   "anchor": [
+    "BetaTurn > 0.82"
+   ],
+   "precision": 0.958904109589041,
+   "coverage": 0.2249
+  },
+  {
+   "label": "BenignTraffic",
+   "anchor": [
+    "BetaTurn > -0.93",
+    "IsoelectricPoint <= -0.55"
+   ],
+   "precision": 1.0,
+   "coverage": 0.3356
+  },
+  {
+   "label": "BenignTraffic",
+   "anchor": [
+    "BetaTurn > -0.93",
+    "MolecularWeight > 0.45"
+   ],
+   "precision": 1.0,
+   "coverage": 0.2415
+  },
+  {
+   "label": "BenignTraffic",
+   "anchor": [
+    "BetaTurn > 0.82"
+   ],
+   "precision": 0.9501557632398754,
+   "coverage": 0.2203
+  },
+  {
+   "label": "BenignTraffic",
+   "anchor": [
+    "BetaTurn > 0.01",
+    "MolecularWeight > -0.13"
+   ],
+   "precision": 1.0,
+   "coverage": 0.2203
+  },
+  {
+   "label": "BenignTraffic",
+   "anchor": [
+    "BetaTurn > -0.93",
+    "MolecularWeight > -0.13"
+   ],
+   "precision": 1.0,
+   "coverage": 0.3446
+  },
+  {
+   "label": "BenignTraffic",
+   "anchor": [
+    "BetaTurn > 0.82",
+    "IsoelectricPoint <= -0.55"
+   ],
+   "precision": 1.0,
+   "coverage": 0.157
+  },
+  {
+   "label": "BenignTraffic",
+   "anchor": [
+    "BetaTurn > 0.82",
+    "IsoelectricPoint <= 0.42"
+   ],
+   "precision": 0.996551724137931,
+   "coverage": 0.2103
+  },
+  {
+   "label": "BenignTraffic",
+   "anchor": [
+    "BetaTurn > -0.93",
+    "MolecularWeight > -0.13"
+   ],
+   "precision": 1.0,
+   "coverage": 0.3382
+  },
+  {
+   "label": "BenignTraffic",
+   "anchor": [
+    "BetaTurn > -0.93",
+    "MolecularWeight > -0.13"
+   ],
+   "precision": 1.0,
+   "coverage": 0.3326
+  }
+ ],
+ "anchor_precision_min": 0.9501557632398754,
+ "anchor_precision_mean": 0.9933840826765736
+}
