@@ -29,3 +29,4 @@ Models: KNN NB DT LR SVM RF GB XGB CatBoost Bagging Stacking-LR Stacking-DT CNN 
 The encoding is in pipeline.py (Yeo-Johnson, mutual information selection, ASCII mod 20, Amino Acid sequence, ten Biopython properties).
 
 Scripts save their progress, so a stopped run can be started again and continues from where it stopped. The output of the run used in the paper is in results/.
+Code for the Scientific Reports revision (2026): see SciRep_2026_revision/, archived at https://doi.org/10.5281/zenodo.23641014
